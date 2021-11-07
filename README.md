@@ -12,6 +12,7 @@ Change the "env.py" file with your credentials
 # CHANGE THE INFORMATION OF TITLE, PRICE... ON "Ad.py"
 
 # ADD ALL OF YOUR ADS PHOTOS INTO THE ADS FOLDER
+```
 
 ## ⌨ How to execute the project
 ```
