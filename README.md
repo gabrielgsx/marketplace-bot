@@ -7,6 +7,12 @@ Change the "env.py" file with your credentials
 - Selenium
 - Pyautogui
 
+## BEFORE STARTING
+```
+# CHANGE THE INFORMATION OF TITLE, PRICE... ON Ad.py
+
+# ADD ALL OF YOUR ADVERTS INTO THE ADS FOLDER
+
 ## ⌨ How to execute the project
 ```
 # Install Selenium
