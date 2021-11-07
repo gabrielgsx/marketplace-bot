@@ -24,11 +24,10 @@ pip install selenium
 
 
 ## OBSERVATIONS
+```
 #CHANGE THE DIRECTORY OF
-```
 options.add_argument("user-data-dir=YOUR-CHROME-PROFILE")
-```
+
 #CITYS
-```
 If you want, you can import only citys from specific states, you just have to import from /ads/Ad.py the list that you want.
 ```
