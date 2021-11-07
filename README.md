@@ -7,7 +7,7 @@ Change the "env.py" file with your credentials
 - Selenium
 - Pyautogui
 
-## BEFORE STARTING
+## 🔌 BEFORE STARTING
 ```
 # CHANGE THE INFORMATION OF TITLE, PRICE... ON "Ad.py"
 
