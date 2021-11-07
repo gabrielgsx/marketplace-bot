@@ -1,7 +1,8 @@
 from selenium import webdriver
 from time import sleep
-from env import username, password
 
+username = ''
+password = ''
 
 options = webdriver.ChromeOptions()
 options.add_argument("user-data-dir=User") # IT WILL CREATE A "USERS" FOLDER THAT WILL HOLD YOUR INSTAGRAM USER COOKIE
