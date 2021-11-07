@@ -17,5 +17,5 @@ pip install selenium
 # Run "main.py" 
 ```
 
-# CHANGE THE DIRECTORIES OF
+## CHANGE THE DIRECTORIES OF
 options.add_argument("user-data-dir=YOUR-CHROME-PROFILE")
