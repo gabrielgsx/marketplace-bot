@@ -25,8 +25,8 @@ pip install selenium
 
 ## OBSERVATIONS
 ```
-#CHANGE THE DIRECTORY OF
-options.add_argument("user-data-dir=YOUR-CHROME-PROFILE")
+#CHROMEDRIVER OR GECKODRIVER
+If you want to use emojis in your text, use geckodriver
 
 #CITYS
 If you want, you can import only citys from specific states, you just have to 
