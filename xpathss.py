@@ -19,4 +19,8 @@ tags1 = 'triturador elétrico, triturador, eletrico, casa, alho, comida, emagrec
 
 place = '/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div/div/div[13]/div/div/div/div/div/div/div/label/div/div[2]/input'
 
+finish1 = '/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[1]/div/div[5]/div/div/div/div/div[1]/div/span'
+
+finish2= '/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[1]/div/div[5]/div[2]/div/div/div[1]/div/span'
+
 scroll_box = '/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[1]/div/div[3]/div[2]'
