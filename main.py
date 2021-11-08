@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.webdriver import FirefoxProfile
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -13,7 +14,11 @@ from xpathss import title, price, category1, category2, condition1, condition2, 
 pyautogui.FAILSAFE = True
 
 options = webdriver.ChromeOptions()
-options.add_argument("user-data-dir=C:\\Users\\gabri\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 16")
+options.add_argument("user-data-dir=C:\\Your\\Path\\Here")
+
+#FIREFOX BROWSER
+#profile = FirefoxProfile("C:\\Your\\Path\\Here")
+#browser = webdriver.Firefox(profile)
 
 browser = webdriver.Chrome('chromedriver.exe', chrome_options=options)
 wait = WebDriverWait(browser, 10)
