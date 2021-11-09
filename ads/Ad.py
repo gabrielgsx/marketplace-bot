@@ -1,17 +1,7 @@
-titulo = '[PROMOÇÃO] TRITURADOR DE ALIMENTOS ELÉTRICO'
-preco = '$89'
+titulo = ''
+preco = ''
 
-descricao1 = '''Economize tempo na preparação de suas refeições diárias! 
-Triture alimentos sem fazer esforço e sujeira na sua cozinha.'''
-descricao2 ='''Com apenas um click, seus alimentos são triturados em instantes. Sem necessidade de fazer esforço e perder tempo.'''
-descricao3 = 'MAIS BENEFÍCIOS:'
-descricao4 = "Fácil de limpar: O triturador é a prova d'água, isso garante uma limpeza por completa."
-descricao5 = "Fácil de usar: Basta um click que o seu alimento estará triturado em segundos. "
-descricao6 = "Economiza tempo: Ganhe mais tempo na sua cozinha. "
-descricao7 = "Recarregável: Produto recarregável através do USB. "
-descricao8 = "Portátil: Leve ele para onde quiser, seja para viagens, casas de parentes. "
-descricao9 = "Segurança: Ele só funciona se estiver totalmente encaixado. "
-descricao10 = "Qualidade: Produto com designer inovador."
+descricao1 = ''
 
 #CIDADES
 c_norte = ['Rio Branco', 'Macapá', 'Manaus', 'Belém', 'Porto Velho', 'Boa Vista', 'Palmas']
