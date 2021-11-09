@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.webdriver import FirefoxProfile
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -8,27 +7,17 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 import pyautogui
 import os
-from ads.Ad import titulo, preco, descricao1, descricao2, descricao3, descricao4, descricao5, descricao6,  descricao7,  descricao8, descricao9, descricao10, cidades
-from xpathss import title, price, category1, category2, condition1, condition2, description, color, tags, tags1, place, finish1, finish2, scroll_box
+from ads.Ad import *
+from xpathss import *
 
 pyautogui.FAILSAFE = True
 
-options = webdriver.ChromeOptions()
-options.add_argument("user-data-dir=C:\\Your\\Path\\Here")
+profile = FirefoxProfile("C:\\Users\\gabri\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\l0tmvkmi.default-release")
+browser = webdriver.Firefox(profile)
 
-#FIREFOX BROWSER
-#profile = FirefoxProfile("C:\\Your\\Path\\Here")
-#browser = webdriver.Firefox(profile)
-
-browser = webdriver.Chrome('chromedriver.exe', chrome_options=options)
 wait = WebDriverWait(browser, 10)
 
-# For tabbing, arrow keys, and interacting with a single webpage
-shortSleep = 0.2
-
-# For all other loading, including file uploads, page refreshes or reloads, etc.
-longSleep = 5
-
+cont = -1
 
 def postDescription():
     sleep(2)
@@ -43,25 +32,29 @@ def postDescription():
     input_box.send_keys(f'{descricao8}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
     input_box.send_keys(f'{descricao9}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
     input_box.send_keys(f'{descricao10}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
+    input_box.send_keys(f'{descricao11}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
 
-def postAllImages():
+def postAllImages(cont):
     sleep(2)
     pyautogui.moveTo(150, 400)
     sleep(1)
     for c in range(30):
         pyautogui.scroll(+100)
     images = getAdImagePaths()
-    postImages(images[0])
+    postImages(images, cont)
 
-def postImages(images):
-    pyautogui.moveTo(150, 400)
-    sleep(shortSleep)
-    pyautogui.click()
-    sleep(5)
-    pyautogui.typewrite(images)
-    sleep(shortSleep)
-    pyautogui.press("enter")
-
+def postImages(images, cont):
+    for c in range(2):
+        pyautogui.moveTo(150, 400)
+        sleep(0.2)
+        pyautogui.click()
+        sleep(5)
+        if c % 2 == 0:
+            pyautogui.typewrite(images[cont])
+        else:
+            pyautogui.typewrite('C:\\Users\\gabri\\Desktop\\marketplace-bot-main\\7.jpg')
+        sleep(0.2)
+        pyautogui.press("enter")
 
 def getAdImagePaths():
     ads = os.getcwd() + "/ads/"
@@ -69,17 +62,23 @@ def getAdImagePaths():
 
     images = []
     for file in files:
-        if file[0] != "." and file != "Ad.py":
+        if file[0] != "." and file != "Ad.py" and file != "__pycache__":
             #images.append(ads + file)
             x = ads + file
             for c in x:
                 if c == '/':
                     valores = x.replace('/', "\\")
             images.append(valores)
+            
+
+    images.sort(key=lambda x: int(x[48:].replace('.jpg', '')))
     return images
 
-def postAd():
+def postAd(cont):
     for city in cidades:
+
+        cont += 1
+
         sleep(10)
         browser.get('https://www.facebook.com/marketplace/create/item')
         sleep(5)
@@ -127,7 +126,7 @@ def postAd():
         sleep(2)
         browser.find_element_by_xpath(f"//span[contains(text(),'{city}')]").click()
 
-        postAllImages()
+        postAllImages(cont)
 
         #FINISH
         sleep(1)
@@ -136,8 +135,8 @@ def postAd():
         browser.find_element_by_xpath(f'{finish2}').click()
 
 
-def main():
-    postAd()
+def main(cont):
+    postAd(cont)
 
-main()
+main(cont)
 
