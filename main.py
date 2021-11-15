@@ -17,7 +17,7 @@ browser = webdriver.Firefox(profile)
 
 wait = WebDriverWait(browser, 10)
 
-cont = -1
+cont = 0
 
 def postDescription():
     sleep(2)
@@ -32,7 +32,7 @@ def postDescription():
     input_box.send_keys(f'{descricao8}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
     input_box.send_keys(f'{descricao9}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
     input_box.send_keys(f'{descricao10}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
-    input_box.send_keys(f'{descricao11}'+ Keys.SHIFT + Keys.ENTER + Keys.ENTER)
+    input_box.send_keys(f'{descricao11}'+ Keys.SHIFT + Keys.ENTER)
 
 def postAllImages(cont):
     sleep(2)
@@ -44,17 +44,26 @@ def postAllImages(cont):
     postImages(images, cont)
 
 def postImages(images, cont):
-    for c in range(2):
-        pyautogui.moveTo(150, 400)
-        sleep(0.2)
-        pyautogui.click()
-        sleep(5)
-        if c % 2 == 0:
-            pyautogui.typewrite(images[cont])
-        else:
-            pyautogui.typewrite('C:\\Users\\gabri\\Desktop\\marketplace-bot-main\\7.jpg')
-        sleep(0.2)
-        pyautogui.press("enter")
+    pyautogui.moveTo(150, 400)
+    sleep(0.2)
+    pyautogui.click()
+    sleep(5)
+    pyautogui.typewrite(images[cont])
+    print(images[cont])
+    sleep(0.5)
+    pyautogui.press("enter")
+    sleep(0.5)
+    #
+    pyautogui.moveTo(150, 400)
+    sleep(0.2)
+    pyautogui.click()
+    sleep(3)
+    #
+    pyautogui.typewrite(images[1+cont])
+    print(images[1+cont])
+    pyautogui.press("enter")
+    
+    sleep(0.5)
 
 def getAdImagePaths():
     ads = os.getcwd() + "/ads/"
@@ -69,15 +78,12 @@ def getAdImagePaths():
                 if c == '/':
                     valores = x.replace('/', "\\")
             images.append(valores)
-            
 
     images.sort(key=lambda x: int(x[48:].replace('.jpg', '')))
     return images
 
 def postAd(cont):
     for city in cidades:
-
-        cont += 1
 
         sleep(10)
         browser.get('https://www.facebook.com/marketplace/create/item')
@@ -115,7 +121,7 @@ def postAd(cont):
         postDescription()
 
         #TAGS
-        sleep(1)
+        sleep(6)
         browser.find_element_by_xpath(f'{tags}').send_keys(tags1)
         sleep(0.3)
 
@@ -127,6 +133,7 @@ def postAd(cont):
         browser.find_element_by_xpath(f"//span[contains(text(),'{city}')]").click()
 
         postAllImages(cont)
+        cont += 2
 
         #FINISH
         sleep(1)
@@ -139,4 +146,3 @@ def main(cont):
     postAd(cont)
 
 main(cont)
-
