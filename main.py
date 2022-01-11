@@ -13,7 +13,7 @@ from xpathss import *
 
 pyautogui.FAILSAFE = True
 
-profile = FirefoxProfile("C:\\Users\\gabri\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\em4skdsw.default-release")
+profile = FirefoxProfile("")
 browser = webdriver.Firefox(profile)
 
 wait = WebDriverWait(browser, 10)
